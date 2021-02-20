@@ -1,0 +1,96 @@
+﻿@model _5204_LearnCodeApp.Models.ViewModels.UpdateCoder
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm("Edit", "Coder", new { id = Model.Coder.CoderID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Update profile</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Coder.CoderID, new { name = "CoderID" })
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Coder.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Coder.UserName, new { htmlAttributes = new { @class = "form-control", Name = "UserName" } })
+                        @Html.ValidationMessageFor(model => model.Coder.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Coder.CoderURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Coder.CoderURL, new { htmlAttributes = new { @class = "form-control", Name = "CoderURL" } })
+                        @Html.ValidationMessageFor(model => model.Coder.CoderURL, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Coder.CoderBio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Coder.CoderBio, new { htmlAttributes = new { @class = "form-control", Name = "CoderBio" } })
+                        @Html.ValidationMessageFor(model => model.Coder.CoderBio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Coder.ResourceID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class=" col-md-10">
+                        <select name="ResourceID">
+                            @foreach (var resource in Model.Allresources)
+                            {
+                                //Auto-selects the resource the coder
+                                string selected = "";
+                                if (Model.Coder.ResourceID == resource.ResourceID)
+                                {
+                                    selected = "";
+                                }
+                                <option value="@resource.ResourceID" @selected>@resource.ResourceTitle</option>
+                            }
+                        </select>
+
+                        @{
+                            //Razor equivalent
+                            /*
+                            @Html.DropDownListFor(
+                                model => model.Coder.ResourceID,
+                                new SelectList(Model.allResources, "ResourceID", "ResourceTitle", Model.Coder.ResourceID),
+                                new { Name = "ResourceID" }
+                            )
+                            */
+                        }
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="col-md-12">Picture:</div>
+                <div class="col-md-12"><input type="file" name="ProfileImage" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+
+

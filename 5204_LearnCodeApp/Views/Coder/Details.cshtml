@@ -1,0 +1,55 @@
+﻿@model _5204_LearnCodeApp.Models.ViewModels.ShowCoder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Coder @Model.Coder.UserName</h2>
+<div style="overflow:hidden;">
+    <div style="float:left; margin-right:2%; width:49%">
+        <div>@Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Coder.CoderID })</div>
+        <hr />
+        @{ 
+            //Use server rendering to determine an image
+            string pic = "/Content/Coders/default.jpg";
+            string alt = "No Profile Picture Provided";
+            if (Model.Coder.CoderHasPic)
+            {
+                pic = "/Content/Coders/" + Model.Coder.CoderID + "." + Model.Coder.PicExtension;
+                alt = "Profile shot of " + Model.Coder.FirstName + " " + Model.Coder.LastName;
+            }
+
+        }
+          
+        <div class = "imagecontainer featured">
+            <img src="@pic" alt="@alt" />
+        </div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Coder.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Coder.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Coder.CoderURL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Coder.CoderBio)
+            </dd>
+
+        </dl>
+
+
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id= Model.Coder.CoderID})
+        @Html.ActionLink("Back to List", "List")
+    </p>
+
+</div>
+
