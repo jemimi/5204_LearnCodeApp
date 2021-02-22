@@ -107,7 +107,7 @@ namespace _5204_LearnCodeApp.Controllers
         {
             UpdateCoder ViewModel = new UpdateCoder();
             //get information about resources this coder may have
-            string url = "resourcedate/getresource";
+            string url = "resourcedata/getresource";
             HttpResponseMessage response = client.GetAsync(url).Result;
             IEnumerable<ResourceDto> PotentialResources = response.Content.ReadAsAsync < IEnumerable<ResourceDto>>().Result;
             ViewModel.Allresources = PotentialResources;

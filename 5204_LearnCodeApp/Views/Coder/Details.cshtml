@@ -41,6 +41,9 @@
             <dd>
                 @Html.DisplayFor(model => model.Coder.CoderBio)
             </dd>
+            <dd>
+                @Html.ActionLink(Model.Resource.ResourceTitle, "Resource", "Resource Title", new { id = Model.Resource.ResourceID }, new { }) 
+            </dd>
 
         </dl>
 

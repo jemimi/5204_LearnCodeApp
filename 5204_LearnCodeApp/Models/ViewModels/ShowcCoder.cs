@@ -14,6 +14,9 @@ namespace _5204_LearnCodeApp.Models.ViewModels
         //Information about all comments made by a coder
         public IEnumerable<CommentDto> CoderComments{ get; set; } //see CoderController.cs
 
+        //Showing single resource
+        public ResourceDto Resource { get; set; }
+
         //Information about all resources by a coder
         public IEnumerable<ResourceDto> CoderResources { get; set; }  //see CoderController.cs
     }
