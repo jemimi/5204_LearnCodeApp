@@ -191,6 +191,9 @@ namespace _5204_LearnCodeApp.Controllers
             }
 
             db.Entry(Coder).State = EntityState.Modified;
+            // profile photo update is handled by another method'
+            db.Entry(Coder).Property(p => p.CoderHasPic).IsModified = false;
+            db.Entry(Coder).Property(p => p.PicExtension).IsModified = false;
 
             try
             {
@@ -332,16 +335,18 @@ namespace _5204_LearnCodeApp.Controllers
             {
                 return NotFound();
             }
-
-            //AND DELETE IMAGE from path
-            string path = HttpContext.Current.Server.MapPath("~/Content/Coders/" + id + "." + Coder.PicExtension);
-            if (System.IO.File.Exists(path))
+            if (Coder.CoderHasPic && Coder.PicExtension != "")
             {
-                Debug.WriteLine("File exists.. preparing to delete!");
-                System.IO.File.Delete(path);
-            }
-            
+                //AND DELETE IMAGE from path
+                string path = HttpContext.Current.Server.MapPath("~/Content/Coders/" + id + "." + Coder.PicExtension);
+                Debug.WriteLine(Coder.PicExtension);
 
+                if (System.IO.File.Exists(path))
+                {
+                    Debug.WriteLine("File exists.. preparing to delete!");
+                    System.IO.File.Delete(path);
+                }
+            }
             
             db.Coders.Remove(Coder);
             db.SaveChanges();

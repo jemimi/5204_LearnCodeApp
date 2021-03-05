@@ -11,6 +11,7 @@ namespace _5204_LearnCodeApp.Models.ViewModels
 
         //Information about the player
         public CoderDto Coder { get; set; }
+
         //Needed for a dropdownlist which presents the player with a choice of teams to play for
         public IEnumerable<ResourceDto> Allresources { get; set; }
         public IEnumerable<CommentDto> Allcomments { get; set; }

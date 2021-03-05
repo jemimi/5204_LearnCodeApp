@@ -11,7 +11,7 @@ namespace _5204_LearnCodeApp.Models
     public class Coder
     {
         [Key]
-        public int CoderID { get; set; }
+        public int CoderID { get; set; } //primary key
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -19,11 +19,15 @@ namespace _5204_LearnCodeApp.Models
         public string ProfileImage { get; set; }
         public bool CoderHasPic { get; set; }
 
+        //If the user has an image, record the extension of the image (.png, .gif, .jpg, etc.)
         public string PicExtension { get; set; }
         public string CoderEmail { get; set; }
 
         public string CoderURL { get; set; }
         public string CoderBio { get; set; }
+
+        //Foreign keys in Entity Framework
+        /// https://www.entityframeworktutorial.net/code-first/foreignkey-dataannotations-attribute-in-code-first.aspx
 
         //A Coder can make many Comments
         //This is a ONE to Many relationship: Coder FK in Comments TABLE
@@ -36,6 +40,7 @@ namespace _5204_LearnCodeApp.Models
         //InverseProperty attribute is used when two entities have more than one relationship.
 
         //One Coder has Many Resources
+        //this refers to the many to many relationship 
         public ICollection<Resource> Resources { get; set; }
     }
 
@@ -67,6 +72,7 @@ namespace _5204_LearnCodeApp.Models
         public bool CoderHasPic { get; set; }
         public string PicExtension { get; set; }
 
+        [DisplayName("Resource")]
         public int ResourceID { get; set; }
     }
 }

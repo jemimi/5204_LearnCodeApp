@@ -297,6 +297,7 @@ namespace _5204_LearnCodeApp.Controllers
         {
             return db.Resources.Count(e => e.ResourceID == id) > 0;
         }
+
     }
 }
 

@@ -1,0 +1,160 @@
+﻿@model IEnumerable<_5204_LearnCodeApp.Models.CoderDto>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Learners </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<!--Future feature: add pagination: add ampersand in front of Html
+   <div class="paginate">
+   {
+        int PrevPage = Convert.ToInt32(ViewData["PageNum"]) - 1;
+        int NextPage = Convert.ToInt32(ViewData["PageNum"]) + 1;
+        Html.ActionLink("Prev", "List", new { PageNum = PrevPage })
+        ViewData["PageSummary"]
+        Html.ActionLink("Next", "List", new { PageNum = NextPage })
+    }
+</div>
+
+
+ -->
+
+<div class="record-container">
+    @foreach (var coder in Model)
+    {
+        <div class="record">
+            <div class="_record">
+                @{
+                    //User server rendering to determine an image
+                    string pic = "/Content/Coders/default.jpg";
+                    string alt = "No Profile Picture Provided";
+                    if (coder.CoderHasPic)
+                    {
+                        pic = "/Content/Coders/" + coder.CoderID + "." + coder.PicExtension;
+                        alt = "Profile shot of " + coder.FirstName + " " + coder.LastName;
+                    }
+                }
+
+                <nav class="linknav">
+                    <span class="editlink">@Html.ActionLink("Edit", "Edit", new { id = coder.CoderID })</span>
+                </nav>
+                <div class="imagecontainer">
+                    <img src="@pic" alt="@alt" />
+                </div>
+                <div class="recordtitle">
+                    @Html.ActionLink(coder.FirstName + " " + coder.LastName, "Details", new { id = coder.CoderID })
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+    </tr>
+
+</table>
+
+    @foreach (var coder in Model)
+    {
+        <div class="_record">
+
+        @{
+            //User server rendering to determine an image
+            string pic = "/Content/Coders/default.jpg";
+            string alt = "No Profile Picture Provided";
+            if (coder.CoderHasPic)
+            {
+                pic = "/Content/Coders/" + coder.CoderID + "." + coder.PicExtension;
+                alt = "Profile shot of " + coder.FirstName + " " + coder.LastName;
+            }
+
+        }
+>       </div>
+    
+    @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = coder.CoderID }) |
+        @Html.ActionLink("Details", "Details", new { id = coder.CoderID })
+
+    </td>*@
+    
+
+    }
+
+<div class="card col-md-6 mt-5 mb-5 my-0 mx-auto">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="100000">
+        <div class="w-100 carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid" />
+                        </div>
+                        <div class="col-sm-9">
+                            <h3>Gives me hope</h3>
+                            <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
+                            <small class="smallest mute">- Yayo Dudemous</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid">
+                        </div>
+                        <div class="col-sm-9">
+                            <h3>You will love it.</h3>
+                            <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
+                            <small class="smallest mute">- Yayo Dudemous</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid">
+                        </div>
+                        <div class="col-sm-9">
+                            <h3>Velvet pouch!</h3>
+                            <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
+                            <small class="smallest mute">- Yayo Dudemous</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-right navi">
+            <a class="" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon ico" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon ico" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+

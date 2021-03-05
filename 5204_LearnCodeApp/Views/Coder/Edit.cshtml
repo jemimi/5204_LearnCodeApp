@@ -1,9 +1,14 @@
 ﻿@model _5204_LearnCodeApp.Models.ViewModels.UpdateCoder
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "View";
 }
 
 <h2>Update</h2>
+
+@{
+    //Note: The attribute enctype="multipart/form-data" is required
+    //if you are sending files as part of the HTTP POST request
+}
 
 @using (Html.BeginForm("Edit", "Coder", new { id = Model.Coder.CoderID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -39,8 +44,10 @@
                         @Html.ValidationMessageFor(model => model.Coder.CoderBio, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
+                <!--RESOURCE LIST IN DROP DOWN -->
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Coder.ResourceID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Coder.ResourceID, htmlAttributes: new { @class = "control-label col-md-4" })
                     <div class=" col-md-10">
                         <select name="ResourceID">
                             @foreach (var resource in Model.Allresources)
@@ -55,17 +62,17 @@
                             }
                         </select>
 
-                        @{
-                            //Razor equivalent
-                            /*
-                            @Html.DropDownListFor(
-                                model => model.Coder.ResourceID,
-                                new SelectList(Model.allResources, "ResourceID", "ResourceTitle", Model.Coder.ResourceID),
-                                new { Name = "ResourceID" }
-                            )
-                            */
-                        }
-                        <input type="submit" value="Save" class="btn btn-default" />
+                        @*@{
+                                //Razor equivalent
+                                /*
+                                @Html.DropDownListFor(
+                                    model => model.Coder.ResourceID,
+                                    new SelectList(Model.allResources, "ResourceID", "ResourceTitle", Model.Coder.ResourceID),
+                                    new { Name = "ResourceID" }
+                                )
+                                */
+                            }*@
+                        
                     </div>
                 </div>
 

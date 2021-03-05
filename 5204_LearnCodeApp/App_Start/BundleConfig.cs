@@ -22,8 +22,9 @@ namespace _5204_LearnCodeApp
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            //add the NEW BOOTSTRAP THEME HERE
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-litera-v3.css",
                       "~/Content/site.css"));
         }
     }

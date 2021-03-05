@@ -5,12 +5,15 @@
 }
 
 <h2> @Model.Coder.UserName</h2>
-<div style="overflow:hidden;">
-    <div style="float:left; margin-right:2%; width:49%">
+<div class="container-fluid">
+    <div style="overflow:hidden;">
+
+
         <div>
-            <button type="button" class="btn btn-primary"> @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Coder.CoderID }) </button></div>
+            <button type="button" class="btn btn-primary"> @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Coder.CoderID }) </button>
+        </div>
         <hr />
-        @{ 
+        @{
             //Use server rendering to determine an image
             string pic = "/Content/Coders/default.jpg";
             string alt = "No Profile Picture Provided";
@@ -21,8 +24,8 @@
             }
 
         }
-          
-        <div class = "imagecontainer featured">
+
+        <div class="imagecontainer featured">
             <img src="@pic" alt="@alt" />
         </div>
 
@@ -41,19 +44,17 @@
             <dt>
                 @Html.DisplayNameFor(model => model.Coder.CoderBio)
             </dt>
-            
+
             @*<dd>
-                @Html.ActionLink(Model.Resource.ResourceTitle, "Resource", "Resource Title", new { id = Model.Resource.ResourceID }, new { }) 
-            </dd>*@
+                    @Html.ActionLink(Model.Resource.ResourceTitle, "Resource", "Resource Title", new { id = Model.Resource.ResourceID }, new { })
+                </dd>*@
 
         </dl>
 
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Coder.CoderID })
+            @Html.ActionLink("Back to List", "List")
+        </p>
 
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id= Model.Coder.CoderID})
-        @Html.ActionLink("Back to List", "List")
-    </p>
-
 </div>
-

@@ -15,9 +15,11 @@ namespace _5204_LearnCodeApp.Models.ViewModels
         public IEnumerable<CommentDto> CoderComments{ get; set; } //see CoderController.cs
 
         //Showing single resource
-        public ResourceDto Resource { get; set; }
+        //public ResourceDto Resource { get; set; }
 
         //Information about all resources by a coder
         public IEnumerable<ResourceDto> CoderResources { get; set; }  //see CoderController.cs
+                                                                      //Needed for a dropdownlist which presents the player with a choice of teams to play for
+        //public IEnumerable<ResourceDto> Allresources { get; set; }
     }
 }

@@ -211,6 +211,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\Resource.cs" />
+    <Compile Include="Models\ViewModels\ResourcesCoders.cs" />
     <Compile Include="Models\ViewModels\ShowcCoder.cs" />
     <Compile Include="Models\ViewModels\ShowComment.cs" />
     <Compile Include="Models\ViewModels\ShowResource.cs" />
@@ -221,11 +222,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-litera-v3.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Coders\agung-rusdy-4hv0TULPhlY-unsplash.jpg" />
+    <Content Include="Content\Coders\albert-dera-ILip77SbmOE-unsplash.jpg" />
+    <Content Include="Content\Coders\ben-parker-NohB3FJSY90-unsplash.jpg" />
+    <Content Include="Content\Coders\ben-parker-OhKElOkQ3RE-unsplash.jpg" />
+    <Content Include="Content\Coders\candice-picard-i8ADlZB2Ijo-unsplash.jpg" />
+    <Content Include="Content\Coders\daoudi-aissa-hNG1tdCjZWo-unsplash.jpg" />
+    <Content Include="Content\Coders\darshan-patel-QJEVpydulGs-unsplash.jpg" />
     <Content Include="Content\Coders\default.jpg" />
+    <Content Include="Content\Coders\joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" />
+    <Content Include="Content\Coders\michael-dam-mEZ3PoFGs_k-unsplash.jpg" />
+    <Content Include="Content\Coders\patricia-prudente-WAzTH9DMxlg-unsplash.jpg" />
+    <Content Include="Content\Coders\thanh-duc-phan-i5R8hbZFDdc-unsplash.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -282,7 +295,6 @@
     <Content Include="Views\Resource\Edit.cshtml" />
     <Content Include="Views\Resource\Error.cshtml" />
     <Content Include="Views\Resource\List.cshtml" />
-    <Content Include="Views\Resource\DeleteConfirm.cshtml" />
     <Content Include="Views\Coder\Create.cshtml" />
     <Content Include="Views\Coder\DeleteConfirm.cshtml" />
     <Content Include="Views\Coder\Details.cshtml" />
@@ -292,6 +304,8 @@
     <Content Include="Views\Comment\Create.cshtml" />
     <Content Include="Views\Comment\DeleteConfirm.cshtml" />
     <Content Include="Views\Comment\Error.cshtml" />
+    <Content Include="Views\Coder\List - Copy.cshtml" />
+    <Content Include="Views\Coder\Details - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
