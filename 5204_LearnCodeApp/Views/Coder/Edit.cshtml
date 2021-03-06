@@ -3,26 +3,31 @@
     ViewBag.Title = "View";
 }
 
-<h2>Update</h2>
+
 
 @{
     //Note: The attribute enctype="multipart/form-data" is required
     //if you are sending files as part of the HTTP POST request
 }
 
+
+<h2>Update profile</h2>
+<div>
+    <button type="button" class="btn btn-secondary btn-lg">@Html.ActionLink("Back to List", "List")</button>
+
+</div>
 @using (Html.BeginForm("Edit", "Coder", new { id = Model.Coder.CoderID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Update profile</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Coder.CoderID, new { name = "CoderID" })
 
         <div class="row">
-            <div class="col-md-6">
-
+            <div class="col-md-10">
                 <div class="form-group">
                     @Html.LabelFor(model => model.Coder.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -47,9 +52,11 @@
 
                 <!--RESOURCE LIST IN DROP DOWN -->
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Coder.ResourceID, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <!--displays the title resource-->
+                    @Html.LabelFor(model => model.Coder.ResourceID, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class=" col-md-10">
                         <select name="ResourceID">
+                            <!--listing the resource titles -->
                             @foreach (var resource in Model.Allresources)
                             {
                                 //Auto-selects the resource the coder
@@ -72,7 +79,7 @@
                                 )
                                 */
                             }*@
-                        
+
                     </div>
                 </div>
 
@@ -89,15 +96,14 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="Save" class="btn btn-secondary btn-lg" />
         </div>
 
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "List")
-</div>
+
+
 
 
 

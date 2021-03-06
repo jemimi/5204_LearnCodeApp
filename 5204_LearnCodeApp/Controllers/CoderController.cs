@@ -172,9 +172,9 @@ namespace _5204_LearnCodeApp.Controllers
             //get information about resources this coder may have
             string url = "resourcedata/getresource";
             HttpResponseMessage response = client.GetAsync(url).Result;
-            IEnumerable<ResourceDto> PotentialResources = response.Content.ReadAsAsync < IEnumerable<ResourceDto>>().Result;
+            //IEnumerable<ResourceDto> PotentialResources = response.Content.ReadAsAsync < IEnumerable<ResourceDto>>().Result;
             
-           ViewModel.Allresources = PotentialResources;
+           //ViewModel.Allresources = PotentialResources;
 
 
             return View(ViewModel);

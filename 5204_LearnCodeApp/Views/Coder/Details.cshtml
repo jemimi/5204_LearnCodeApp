@@ -8,7 +8,7 @@
 <div style="overflow:hidden;">
     <div style="float:left; margin-right:2%; width:49%">
         <div>
-            <button type="button" class="btn btn-primary"> @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Coder.CoderID }) </button></div>
+            <button type="button" class="btn btn-secondary btn-lg"> @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Coder.CoderID }) </button></div>
         <hr />
         @{ 
             //Use server rendering to determine an image
@@ -16,8 +16,8 @@
             string alt = "No Profile Picture Provided";
             if (Model.Coder.CoderHasPic)
             {
-                pic = "/Content/Coders/" + Model.Coder.CoderID + "." + Model.Coder.PicExtension;
-                alt = "Profile shot of " + Model.Coder.FirstName + " " + Model.Coder.LastName;
+                pic = "/Content/Coders/" + Model.Coder.CoderID + "." + Model.Coder.PicExtension; //image file does not print
+                alt = "Profile shot of " + Model.Coder.FirstName + " " + Model.Coder.LastName; //lastname does not not print 
             }
 
         }
@@ -30,20 +30,29 @@
             <dt>
                 @Html.DisplayNameFor(model => model.Coder.FirstName)
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.Coder.FirstName)
             </dd>
-            <dt>
-                @Html.DisplayFor(model => model.Coder.CoderBio)
-            </dt>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Coder.CoderBio)
             </dt>
-            
+            <dd>
+                @Html.DisplayFor(model => model.Coder.CoderBio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Coder.CoderURL)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Coder.CoderURL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Coder.ResourceTitle)
+            </dt>
             @*<dd>
-                @Html.ActionLink(Model.Resource.ResourceTitle, "Resource", "Resource Title", new { id = Model.Resource.ResourceID }, new { }) 
+                @Html.ActionLink(Model.Coder.ResourceTitle, "Resource", "Resource Title", new { id = Model.Coder.ResourceID }, new { })
             </dd>*@
 
         </dl>
@@ -51,8 +60,9 @@
 
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id= Model.Coder.CoderID})
-        @Html.ActionLink("Back to List", "List")
+        <button type="button" class="btn btn-secondary btn-lg">@Html.ActionLink("Edit", "Edit", new { id = Model.Coder.CoderID })</button>
+        <button type="button" class="btn btn-secondary btn-lg">@Html.ActionLink("Back to List", "List")</button>
+        
     </p>
 
 </div>

@@ -1,0 +1,41 @@
+﻿@model _5204_LearnCodeApp.Models.ResourceDto
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div>
+    <img src="\Content\icons\Croods - Avatar and Backdrop.png" alt="" />
+</div>
+
+
+
+    <h2>Delete Confirmation</h2>
+
+    <h3>Are you sure you want to delete resource?</h3>
+    <div>
+
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResourceTitle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ResourceTitle)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm("Delete", "Resource", new { id = Model.ResourceID }))
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        <button type="button" class="btn btn-secondary btn-lg"> @Html.ActionLink("Back to List", "List")</button>
+       
+    </div>
+        }
+    </div>
+ 
+

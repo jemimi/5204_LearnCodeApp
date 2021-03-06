@@ -239,6 +239,13 @@
     <Content Include="Content\Coders\michael-dam-mEZ3PoFGs_k-unsplash.jpg" />
     <Content Include="Content\Coders\patricia-prudente-WAzTH9DMxlg-unsplash.jpg" />
     <Content Include="Content\Coders\thanh-duc-phan-i5R8hbZFDdc-unsplash.jpg" />
+    <Content Include="Content\icons\404cat.png" />
+    <Content Include="Content\icons\404hang.png" />
+    <Content Include="Content\icons\Croods - Avatar and Backdrop.png" />
+    <Content Include="Content\icons\Croods - Keeping in Touch.png" />
+    <Content Include="Content\icons\Croods - The Feedback.png" />
+    <Content Include="Content\icons\index_background.png" />
+    <Content Include="Content\icons\pencil_blush.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -306,6 +313,7 @@
     <Content Include="Views\Comment\Error.cshtml" />
     <Content Include="Views\Coder\List - Copy.cshtml" />
     <Content Include="Views\Coder\Details - Copy.cshtml" />
+    <Content Include="Views\Resource\DeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

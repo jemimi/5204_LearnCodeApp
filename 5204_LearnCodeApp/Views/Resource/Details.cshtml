@@ -5,31 +5,38 @@
 }
 
 <h2>Resource @Model.Resource.ResourceTitle</h2>
+<button type="button" class="btn btn-secondary btn-lg">@Html.ActionLink("Back to List", "List")</button>
 <div style="overflow:hidden;">
     <div style="float:left; margin-right:2%; width:49%">
-        <div>@Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Resource.ResourceID })</div>
-
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Resource.ResourceTitle)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Resource.ResourceTitle)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Resource.ResourceDescription)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Resource.ResourceDescription)
-            </dd>
-
-        </dl>
-
 
     </div>
 
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Resource.ResourceURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resource.ResourceURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resource.ResourceDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resource.ResourceDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Resource.ResourceLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resource.ResourceLanguage)
+        </dd>
+    </dl>
+
+    <div>@Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Resource.ResourceID })</div>
 </div>
+
 

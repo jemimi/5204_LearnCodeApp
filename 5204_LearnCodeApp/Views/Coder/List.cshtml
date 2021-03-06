@@ -4,10 +4,12 @@
     ViewBag.Title = "List";
 }
 
-<h2>Learners </h2>
-
+<h2>Users </h2>
+<div>
+    <img src="~/Content/icons/pencil_blush.png" alt="" style="width:30%"/>
+</div>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-secondary btn-lg"> @Html.ActionLink("Create New", "Create")</button>
 </p>
 
 <!--Future feature: add pagination: add ampersand in front of Html
@@ -33,26 +35,27 @@
                     //User server rendering to determine an image
                     string pic = "/Content/Coders/default.jpg";
                     string alt = "No Profile Picture Provided";
-                    string bio = "Short Bio";
+                    
                    
 
                     if (coder.CoderHasPic)
                     {
                         pic = "/Content/Coders/" + coder.CoderID + "." + coder.PicExtension;
                         alt = "Profile shot of " + coder.FirstName + " " + coder.LastName;
-                        bio = "/Content/Coders/" + coder.CoderBio;
+                        
 
                     }
                 }
 
                 <nav class="linknav">
-                    <span class="editlink">@Html.ActionLink("Edit", "Edit", new { id = coder.CoderID })</span>
+                    <span class="editlink"><button type="button" class="btn btn-secondary btn-sm">@Html.ActionLink("Edit", "Edit", new { id = coder.CoderID })</button></span>
                 </nav>
                 <div class="imagecontainer">
                     <img src="@pic" alt="@alt" />
                 </div>
                 <div class="recordtitle">
                     @Html.ActionLink(coder.FirstName + " " + coder.LastName, "Details", new { id = coder.CoderID })
+          
                 </div>
             </div>
         </div>
@@ -70,38 +73,6 @@
 
     </td>*@
 
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CoderBio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CoderURL)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.CoderBio)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.CoderEmail)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CoderID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CoderID })
-
-            </td>
-        </tr>
-    }
-
-</table>
 
 
 

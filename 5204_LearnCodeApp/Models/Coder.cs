@@ -74,5 +74,8 @@ namespace _5204_LearnCodeApp.Models
 
         [DisplayName("Resource")]
         public int ResourceID { get; set; }
+
+        [DisplayName("Resource")]
+        public int ResourceTitle { get; set; }
     }
 }
