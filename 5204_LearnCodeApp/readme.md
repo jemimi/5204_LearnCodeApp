@@ -1,24 +1,34 @@
-#Http5204 Passion Project: Coding learning resources: 
+# Http5204 Passion Project: PUNCHCODE 
 
 The pitch: Directory app to discover coding resources from the web. 
 
-##Challenges: 
-Trying to make sense of the issues and bugs that are plaguing this project. 
+## The Vision  
+Punchcode features resources for new learners of coding.
+Learners would be able to save their favorite resources, follow other learners, write tutorials
+and study together.
 
-Need to do: 
-* Bug fix: The view page for Coders List.cshtml does not open but instead points to an error page. 
-* Add user profile images 
-* connect user login table with the coder table - one to one relationship
-* add more resources to the database
-* Adjust the CSS to reflect wireframes
-* icon to click and save resource by a user
+## The reality
+Punchcode is an attempt to build out the minimum viable product (MVP) that would bring this vision to life.
+
+## Challenges 
+One of the most difficult challenges was just trying to understand the
+inner-workings of the asp.net. Next is setting up the database. I spent many hours trying to set up the database properly.
+I re-did the project 3 times to ensure that all the relationships between tables were set up properly.  However, I was
+sadly mistaken. The tables looked ok but the many-to-many relationships did not work (implicit or explicit) since nothing could be saved that involved the 2 tables.
+Another challenge was understanding how the view models worked, their relationship to the controllers.
+and how to get multiple tables printed on a single page (if that makes sense). 
 
 
-Future features: 
-A coder can follow another coder
+#Future Features
+- Adding dynamic links
+- Adding images dynamically
+- Ability to save resources
+- Pagination
 
 
-
+Reference
+Christine Bittle's Varsity Project
+Image source: blush.design
 
 
 
